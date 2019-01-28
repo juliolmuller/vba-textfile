@@ -1,11 +1,9 @@
 
 # Text File Handler Module for Visual Basic for Application
 
-## Details
-
 - **Developed by:** Julio L. Muller
-- **Latest version:** 1.0.0
 - **Release date:** Jan 24, 2019
+- **Latest version:** 1.0.0
 - **License:** *FREE*
 
 ## Installation
@@ -14,7 +12,7 @@ Imprort the `*.bas` file into your Visual Basic project by following the steps:
 
 1. With the Excel workbook open. start the VBE window (`Alt + F11`);
 2. In the menu, click on *File* > *Import File...* (`Ctrl + M`);
-3. Through the file explorer, select the **jModule_TextFile.bas** file;
+3. Through the file explorer, select the **TextFileModule.bas** file;
 4. An item called *TextFileModule* will show up on your *Modules* list;
 5. Enjoy!
 
