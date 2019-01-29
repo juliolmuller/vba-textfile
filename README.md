@@ -2,7 +2,7 @@
 # Text File Handler Module for Visual Basic for Application
 
 - **Developed by:** Julio L. Muller
-- **Released on:** Jan 24, 2019
+- **Released on:** May 12, 2018
 - **Updated on:** Jan 24, 2019
 - **Latest version:** 1.0.0
 - **License:** *FREE*
