@@ -19,8 +19,6 @@ Imprort the `*.bas` file into your Visual Basic project by following the steps:
 
 Alternatively, copy and paste the plain text from the `*.txt` file into an existing module in your project.
 
-**It is important to mention** that VBA does not handle **relative paths** very well, like other programming languages, so always prefar to use the **absolute paths** instead. To *emulate* relative paths, use the object `ThisWorkbook` and its method `Path` and then concatenate the folder/file paths starting on the current directory of the workbook you are working on. The use of this resource will be shown in the examples that follow. Also, when using `ThisWorkbook.Path`, always use the back slash (`\`) to navigate through the directories.
-
 ## Content Summary
 
 | Type         | Name                                                         | Return Type |
@@ -33,9 +31,11 @@ Alternatively, copy and paste the plain text from the `*.txt` file into an exist
 
 ## Resources Documentation
 
+VBA does not handle **relative paths** very well, like other programming languages, so always prefar to use the **absolute paths** instead. To *emulate* relative paths, use the object `ThisWorkbook` and its method `Path` and then concatenate the folder/file paths starting on the current directory of the workbook you are working on. The use of this resource will be shown in the examples that follow. Also, when using `ThisWorkbook.Path`, always use the back slash (`\`) to navigate through the directories.
+
 ### Create Text File
 
-This subroutine creates a text file and adds content to it if necessary. ***Warning:*** if the file informed already exists in the informed directory, the function will overwrite the old file and create a brand new one.
+This subroutine `CreateTextFile()` creates a text file and adds content to it if necessary. ***Warning:*** if the file informed already exists in the informed directory, the function will overwrite the old file and create a brand new one.
 
 #### Structure
 
@@ -70,7 +70,7 @@ Sub CreateTextFile(fullFileName As String, Optional content As String)
 
 ### Get Text File Content
 
-Retrieves the content of a text file as *String*.
+Use `GetTextFileContent()` to retrieve content of a text file as *String*.
 
 #### Structure
 
@@ -95,7 +95,7 @@ Function GetTextFileContent(fullFileName As String) As String
 
 ### Replace Text File Content
 
-Function to access a text file content, replace certain term by other and, alternatively. save the result into a new text file. ***Warning:*** if the new file path informed already exists in the informed directory, the function will overwrite the old file without any prompt.
+Function `ReplaceAtTextFile()` access a text file content, replace certain term by other and, alternatively. save the result into a new text file. ***Warning:*** if the new file path informed already exists in the informed directory, the function will overwrite the old file without any prompt.
 
 #### Structure
 
@@ -125,7 +125,7 @@ Function ReplaceAtTextFile(fullFileName As String, oldText As String, newText As
 
 ### Append Content to Text File
 
-Place a given string at the end of an existing text file. ***Warning:*** if the new file path informed already exists in the informed directory, the function will overwrite the old file without any prompt.
+To place a given string at the end of an existing text file, use function `AppendToTextFile()`. ***Warning:*** if the new file path informed already exists in the informed directory, the function will overwrite the old file without any prompt.
 
 #### Structure
 
@@ -135,7 +135,7 @@ Function AppendToTextFile(fullFileName As String, newContent As String) As Strin
 
 - **fullFileName** - Target file name with its directory path. If the file or the folder informed does not exist, the compiler will throw **run-time error 53** and **76** respectively.
 - **newContent** - String which should be written at the end of the passed file.
-- - ***return*** - The function returns the updated content of the target file. 
+- ***return*** - The function returns the updated content of the target file. 
 
 #### Example
 
@@ -152,7 +152,7 @@ Function AppendToTextFile(fullFileName As String, newContent As String) As Strin
 
 ### Turn Text File Content into Array
 
-Excellent function to capture tables stored in text files, manipulating the data as a bidimentional array. ***Warning:*** this function works fine only with verywell dimensioned data set. You **MUST** have your table header on the first line and immediately followed by the data, or you can ommit the header and start the file with the data directly. **Blamk rows or rows with different sizes than your header are not supported.**
+`ConvertTextFileToArray()` is an excellent function to capture tables stored in text files, manipulating the data as a bidimentional array. ***Warning:*** this function works fine only with verywell dimensioned data set. You **MUST** have your table header on the first line and immediately followed by the data, or you can ommit the header and start the file with the data directly. **Blamk rows or rows with different sizes than your header are not supported.**
 
 #### Structure
 
@@ -162,7 +162,7 @@ Function ConvertTextFileToArray(fullFileName As String, horizontalDelimiter As S
 
 - **fullFileName** - Target file name with its directory path. If the file or the folder informed does not exist, the compiler will throw **run-time error 53** and **76** respectively.
 - **horizontalDelimiter** - Inform the string which represents the jump from a column to another (the delimiter between two data cells). For example, the most commonly used delimiters are: `Tab`, `","` (comma), `";"` (semicolon) and `"|"` (pipeline). Just for instance, the vertical delimiter is the *line break* (`Enter`). This character (or string) is used only as metadata, and it is not imported into the array.
-- - ***return*** - The function returns a bidimentioned array of strings, so its return should be attributed to variable of type `String()` or `Variant`. The indexes of the array are designed as *Columns & Rows*, meaning the firs index indicates the column, and the second one indicates the row of the content obtained from the file. Both indexes start in '0' (zero) and it does not change whether you have header line or not.
+- ***return*** - The function returns a bidimentioned array of strings, so its return should be attributed to variable of type `String()` or `Variant`. The indexes of the array are designed as *Columns & Rows*, meaning the firs index indicates the column, and the second one indicates the row of the content obtained from the file. Both indexes start in '0' (zero) and it does not change whether you have header line or not.
 
 #### Example
 
@@ -185,14 +185,14 @@ Function ConvertTextFileToArray(fullFileName As String, horizontalDelimiter As S
     Next i
 ```
 
-### Compatibility
+## Compatibility
 
 The scripts were tested **ONLY** in MS Excel 2013 and 2016. MS Access and other MS Office applications were not tested.
 
 Please, report any issues (or even success on running it in other applications or Excel versions) through the commentary session.
 
-### Other Contents
+## Other Contents
 
-- [File Handler Class for VBA](https://github.com/juliolmuller/VBA-Class-FileHandler)
-- [MS Outlook Module for VBA](https://github.com/juliolmuller/VBA-Module-Outlook)
+- [File Handler Class for VBA](https://github.com/juliolmuller/VBA-Class-File)
 - [Native File Handler API in VBA](http://www.homeandlearn.org/open_a_text_file_in_vba.html)
+- [Send Email with Outlook - Module for VBA](https://github.com/juliolmuller/VBA-Module-Outlook)
