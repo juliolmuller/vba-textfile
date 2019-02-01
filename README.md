@@ -193,6 +193,5 @@ Please, report any issues (or even success on running it in other applications o
 
 ## Other Contents
 
-- [File Handler Class for VBA](https://github.com/juliolmuller/VBA-Class-File)
 - [Native File Handler API in VBA](http://www.homeandlearn.org/open_a_text_file_in_vba.html)
 - [Send Email with Outlook - Module for VBA](https://github.com/juliolmuller/VBA-Module-Outlook)
