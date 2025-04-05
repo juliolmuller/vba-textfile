@@ -5,7 +5,7 @@
 - **Released on:** May 12, 2018
 - **Updated on:** Jan 24, 2019
 - **Latest version:** 1.0.0
-- **License:** *FREE*
+- **License:** MIT
 
 ## Installation
 
@@ -135,7 +135,7 @@ Function AppendToTextFile(fullFileName As String, newContent As String) As Strin
 
 - **fullFileName** - Target file name with its directory path. If the file or the folder informed does not exist, the compiler will throw **run-time error 53** and **76** respectively.
 - **newContent** - String which should be written at the end of the passed file.
-- ***return*** - The function returns the updated content of the target file. 
+- ***return*** - The function returns the updated content of the target file.
 
 #### Example
 
